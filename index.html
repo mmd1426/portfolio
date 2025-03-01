@@ -1,3 +1,29 @@
-<meta name="description" content="محمد مهدی دهقانی | برنامه‌نویس هوش مصنوعی و یادگیری عمیق">
-<meta name="keywords" content="محمد مهدی دهقانی, هوش مصنوعی, یادگیری ماشین, برنامه‌نویسی, GitHub">
-<meta name="author" content="محمد مهدی دهقانی">
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محمد مهدی دهقانی</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        body {
+            background-color: #121212;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center h-screen">
+    <div class="text-center">
+        <h1 id="title" class="text-5xl font-bold mb-4">محمد مهدی دهقانی</h1>
+        <p id="subtitle" class="text-lg text-gray-400 mb-6">برنامه‌نویس هوش مصنوعی و یادگیری عمیق</p>
+        <a href="https://github.com/MMD1426" class="px-6 py-3 bg-blue-600 hover:bg-blue-500 transition-all rounded-lg text-lg">گیت‌هاب من</a>
+    </div>
+    
+    <script>
+        gsap.from("#title", { duration: 1, y: -50, opacity: 0, ease: "power3.out" });
+        gsap.from("#subtitle", { duration: 1, y: 50, opacity: 0, delay: 0.5, ease: "power3.out" });
+    </script>
+</body>
+</html>
