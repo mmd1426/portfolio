@@ -16,14 +16,39 @@
 </head>
 <body class="flex items-center justify-center h-screen">
     <div class="text-center">
+        <button id="lang-toggle" class="absolute top-5 right-5 px-4 py-2 bg-gray-700 rounded-lg">EN</button>
+        <img id="profile-pic" src="profile.jpg" alt="Profile Picture" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-gray-600">
         <h1 id="title" class="text-5xl font-bold mb-4">محمد مهدی دهقانی</h1>
         <p id="subtitle" class="text-lg text-gray-400 mb-6">برنامه‌نویس هوش مصنوعی و یادگیری عمیق</p>
-        <a href="https://github.com/MMD1426" class="px-6 py-3 bg-blue-600 hover:bg-blue-500 transition-all rounded-lg text-lg">گیت‌هاب من</a>
+        <a id="github-link" href="https://github.com/MMD1426" class="px-6 py-3 bg-blue-600 hover:bg-blue-500 transition-all rounded-lg text-lg">گیت‌هاب من</a>
     </div>
     
     <script>
-        gsap.from("#title", { duration: 1, y: -50, opacity: 0, ease: "power3.out" });
-        gsap.from("#subtitle", { duration: 1, y: 50, opacity: 0, delay: 0.5, ease: "power3.out" });
+        gsap.from("#profile-pic", { duration: 1, scale: 0, opacity: 0, ease: "power3.out" });
+        gsap.from("#title", { duration: 1, y: -50, opacity: 0, delay: 0.3, ease: "power3.out" });
+        gsap.from("#subtitle", { duration: 1, y: 50, opacity: 0, delay: 0.6, ease: "power3.out" });
+
+        const langToggle = document.getElementById("lang-toggle");
+        const title = document.getElementById("title");
+        const subtitle = document.getElementById("subtitle");
+        const githubLink = document.getElementById("github-link");
+        
+        let isPersian = true;
+        
+        langToggle.addEventListener("click", () => {
+            if (isPersian) {
+                title.textContent = "Mohammad Mahdi Dehghani";
+                subtitle.textContent = "AI & Deep Learning Developer";
+                githubLink.textContent = "My GitHub";
+                langToggle.textContent = "FA";
+            } else {
+                title.textContent = "محمد مهدی دهقانی";
+                subtitle.textContent = "برنامه‌نویس هوش مصنوعی و یادگیری عمیق";
+                githubLink.textContent = "گیت‌هاب من";
+                langToggle.textContent = "EN";
+            }
+            isPersian = !isPersian;
+        });
     </script>
 </body>
 </html>
