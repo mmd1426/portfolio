@@ -46,6 +46,125 @@
             border-radius: 2px;
             margin: 10px auto;
         }
+
+        /* دایره مهارت‌ها */
+        .circle-skill {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 20px auto;
+        }
+
+        .circle-skill svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform: rotate(-90deg); /* شروع از بالا */
+        }
+
+        .circle-skill circle {
+            fill: none;
+            stroke-width: 8;
+        }
+
+        .circle-skill .background-circle {
+            stroke: #444;
+        }
+
+        .circle-skill .progress-circle {
+            stroke: #28a745; /* رنگ پیشرفت */
+            stroke-dasharray: 314; /* محیط دایره (2 * π * r) */
+            stroke-dashoffset: 314; /* شروع از صفر */
+            transition: stroke-dashoffset 2s ease;
+        }
+
+        .circle-skill img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 48px;
+            height: 48px;
+            z-index: 1;
+        }
+
+        /* تنظیم رنگ مخصوص برای هر لوگو */
+        .circle-skill.keras img {
+            filter: brightness(0) saturate(100%) invert(16%) sepia(92%) saturate(5000%) hue-rotate(356deg) brightness(92%) contrast(104%);
+        }
+
+        .circle-skill.python img {
+            filter: brightness(0) saturate(100%) invert(44%) sepia(75%) saturate(1424%) hue-rotate(185deg) brightness(91%) contrast(93%);
+        }
+
+        .circle-skill.tensorflow img {
+            filter: brightness(0) saturate(100%) invert(60%) sepia(94%) saturate(1336%) hue-rotate(5deg) brightness(96%) contrast(103%);
+        }
+
+        .circle-skill.opencv img {
+            filter: brightness(0) saturate(100%) invert(28%) sepia(78%) saturate(635%) hue-rotate(212deg) brightness(98%) contrast(102%);
+        }
+
+        .circle-skill.yolo img {
+            filter: brightness(0) saturate(100%) invert(10%) sepia(80%) saturate(1500%) hue-rotate(210deg) brightness(90%) contrast(120%);
+        }
+
+        .circle-skill.keras .progress-circle {
+            stroke: #D00000; /* رنگ قرمز Keras */
+        }
+
+        .circle-skill.python .progress-circle {
+            stroke: #3776AB; /* رنگ آبی Python */
+        }
+
+        .circle-skill.tensorflow .progress-circle {
+            stroke: #FF6F00; /* رنگ نارنجی TensorFlow */
+        }
+
+        .circle-skill.opencv .progress-circle {
+            stroke: #5C3EE8; /* رنگ آبی OpenCV */
+        }
+
+        .circle-skill.yolo .progress-circle {
+            stroke: #111F68; /* رنگ زرد YOLO */
+        }
+
+
+        .flex {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .gap-8 {
+            gap: 2rem; /* فاصله بین مهارت‌ها */
+        }
+
+        .justify-center {
+            justify-content: center;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-2 {
+            margin-top: 0rem;
+        }
+
+        .mb-8 {
+            margin-bottom: 0rem;
+        }
+
+        .separator {
+            width: 100px;
+            height: 4px;
+            background-color: white;
+            margin: 20px auto;
+            border-radius: 2px;
+        }
     </style>
 </head>
 <body class="flex flex-col items-center justify-center text-center p-6 rtl">
@@ -63,7 +182,7 @@
         <a href="https://github.com/MMD1426" target="_blank" class="icon-wrapper">
             <i class="fab fa-github"></i>
         </a>
-        <a href="https://www.linkedin.com/in/mmd2005/" target="_blank" class="icon-wrapper">
+        <a href="https://www.linkedin.com/in/mmd1426/" target="_blank" class="icon-wrapper">
             <i class="fab fa-linkedin"></i>
         </a>
         <a href="https://www.kaggle.com/mmd1426" target="_blank" class="icon-wrapper">
@@ -71,26 +190,120 @@
         </a>
     </div>
 
-<!-- نوار سفید بالای "درباره من" -->
-<div class="separator opacity-0"></div> 
+    <div class="separator opacity-0"></div>
     <h2 id="about-title" class="text-3xl font-bold mb-4 opacity-0 text-right">درباره من</h2>
     <div id="about-me" class="max-w-2xl text-gray-300 opacity-0 text-right">
         <p class="mb-4">سلام! من محمد مهدی دهقانی هستم، یک مهندس هوش مصنوعی با علاقه‌مندی به یادگیری عمیق و پردازش تصویر. به دنبال حل چالش‌های پیچیده و توسعه مدل‌های یادگیری ماشین برای کاربردهای واقعی هستم.</p>
+    </div>
+
+    <!-- مهارت‌ها -->
+    <div id="skills-bar" class="w-full mt-20">
+        <div class="separator opacity-0"></div>
+        <div class="text-right mb-6">
+            <h2 id='skills' class="text-3xl font-bold">مهارت‌ها</h2>
+        </div>
+
+        <!-- ردیف اول: ۳ مهارت -->
+        <div id='skills-1' class="flex justify-center gap-8 mb-8">
+            <!-- Keras -->
+            <div class="text-center">
+                <div class="circle-skill keras">
+                    <svg>
+                        <circle class="background-circle" cx="60" cy="60" r="50"/>
+                        <circle id="keras-circle" class="progress-circle" cx="60" cy="60" r="50"/>
+                    </svg>
+                    <img src="https://simpleicons.org/icons/keras.svg" alt="Keras" class="w-12 h-12">
+                </div>
+            </div>
+
+            <!-- Python -->
+            <div class="text-center">
+                <div class="circle-skill python">
+                    <svg>
+                        <circle class="background-circle" cx="60" cy="60" r="50"/>
+                        <circle id="python-circle" class="progress-circle" cx="60" cy="60" r="50"/>
+                    </svg>
+                    <img src="https://simpleicons.org/icons/python.svg" alt="Python" class="w-12 h-12">
+                </div>
+            </div>
+
+            <!-- TensorFlow -->
+            <div class="text-center">
+                <div class="circle-skill tensorflow">
+                    <svg>
+                        <circle class="background-circle" cx="60" cy="60" r="50"/>
+                        <circle id="tensorflow-circle" class="progress-circle" cx="60" cy="60" r="50"/>
+                    </svg>
+                    <img src="https://simpleicons.org/icons/tensorflow.svg" alt="TensorFlow" class="w-12 h-12">
+                </div>
+            </div>
+        </div>
+
+        <!-- ردیف دوم: ۲ مهارت -->
+        <div id='skills-2' class="flex justify-center gap-8">
+            <!-- OpenCV -->
+            <div class="text-center">
+                <div class="circle-skill opencv">
+                    <svg>
+                        <circle class="background-circle" cx="60" cy="60" r="50"/>
+                        <circle id="opencv-circle" class="progress-circle" cx="60" cy="60" r="50"/>
+                    </svg>
+                    <img src="https://simpleicons.org/icons/opencv.svg" alt="OpenCV" class="w-12 h-12">
+                </div>
+            </div>
+
+            <!-- YOLO -->
+            <div class="text-center">
+                <div class="circle-skill yolo">
+                    <svg>
+                        <circle class="background-circle" cx="60" cy="60" r="50"/>
+                        <circle id="yolo-circle" class="progress-circle" cx="60" cy="60" r="50"/>
+                    </svg>
+                    <img src="https://simpleicons.org/icons/yolo.svg" alt="YOLO" class="w-12 h-12">
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
         gsap.from("#profile-pic", { duration: 1, scale: 0, opacity: 0, ease: "power3.out" });
         gsap.from("#title", { duration: 1, y: -50, opacity: 0, delay: 0.3, ease: "power3.out" });
         gsap.from("#subtitle", { duration: 1, y: 50, opacity: 0, delay: 0.6, ease: "power3.out" });
-        gsap.to("#about-title", { duration: 1, y: 0, opacity: 1, delay: 1, ease: "power3.out" });
-        gsap.to(".separator", { duration: 1, opacity: 1, delay: 1.2, ease: "power3.out" });
-        gsap.to("#about-me", { duration: 1, opacity: 1, delay: 1.3, ease: "power3.out" });
+        gsap.to(".separator", { duration: 1, opacity: 1, delay: 1, ease: "power3.out" });
+        gsap.to("#about-title", { duration: 1, y: 0, opacity: 1, delay: 1.2, ease: "power3.out" });
+        gsap.to("#about-me", { duration: 1, opacity: 1, delay: 1.5, ease: "power3.out" });
+        
+        gsap.from("#skills", { 
+            duration: 1, 
+            y: 50, // حرکت از پایین به بالا
+            opacity: 0, 
+            delay: 1.8, // تاخیر بیشتر برای نمایش بعد از بخش‌های قبلی
+            ease: "power3.out" 
+        });
+
+        gsap.from(".circle-skill", {
+            duration: 1,
+            scale: 0, // شروع از اندازه صفر
+            opacity: 0,
+            stagger: 0.2, // تاخیر بین انیمیشن هر دایره
+            delay: 2.0, // تاخیر کلی برای شروع انیمیشن دایره‌ها
+            ease: "back.out(1.7)" // افکت ارتجاعی
+        });
+
+
+        // انیمیشن نوارهای پیشرفت
+        gsap.to("#keras-circle", { duration: 2, strokeDashoffset: 110, delay: 0.3 });
+        gsap.to("#python-circle", { duration: 2, strokeDashoffset: 150, delay: 0.6 });
+        gsap.to("#tensorflow-circle", { duration: 2, strokeDashoffset: 180, delay: 0.9 });
+        gsap.to("#opencv-circle", { duration: 2, strokeDashoffset: 200, delay: 1.2 });
+        gsap.to("#yolo-circle", { duration: 2, strokeDashoffset: 220, delay: 1.5 });
 
         const langToggle = document.getElementById("lang-toggle");
         const title = document.getElementById("title");
         const subtitle = document.getElementById("subtitle");
         const aboutTitle = document.getElementById("about-title");
         const aboutMe = document.getElementById("about-me");
+        const skills = document.getElementById("skills");
 
         let isPersian = true;
 
@@ -100,12 +313,14 @@
                 subtitle.textContent = "AI Engineer";
                 aboutTitle.textContent = "About Me";
                 aboutMe.innerHTML = "<p class='mb-4 text-left'>Hello! I'm Mohammad Mahdi Dehghani, an AI Engineer passionate about deep learning and computer vision. I am focused on solving complex challenges and developing machine learning models for real-world applications.</p>";
+                skills.textContent = "Skills";
                 langToggle.textContent = "FA";
             } else {
                 title.textContent = "محمد مهدی دهقانی";
                 subtitle.textContent = "مهندس هوش مصنوعی";
                 aboutTitle.textContent = "درباره من";
                 aboutMe.innerHTML = "<p class='mb-4 text-right'>سلام! من محمد مهدی دهقانی هستم، یک مهندس هوش مصنوعی با علاقه‌مندی به یادگیری عمیق و پردازش تصویر. به دنبال حل چالش‌های پیچیده و توسعه مدل‌های یادگیری ماشین برای کاربردهای واقعی هستم.</p>";
+                skills.textContent = "مهارت ها";
                 langToggle.textContent = "EN";
             }
             isPersian = !isPersian;
