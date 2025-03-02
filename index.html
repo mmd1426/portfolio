@@ -1,106 +1,142 @@
 <!DOCTYPE html>
 <html lang="fa">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>محمد مهدی دهقانی</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <style>
-        body {
-            background-color: #121212;
-            color: #fff;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .icon-wrapper {
-            border: 2px solid white;
-            border-radius: 50%;
-            padding: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            transition: background 0.3s ease-in-out;
-        }
-
-        .icon-wrapper img {
-            width: 24px;
-            height: 24px;
-        }
-
-        .icon-wrapper:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        #profile-pic {
-            border: 2px solid white;
-        }
-    </style>
-</head>
-<body class="flex flex-col items-center justify-center text-center p-6 rtl">
-    <button id="lang-toggle" class="absolute top-5 right-5 px-4 py-2 bg-gray-700 hover:bg-gray-600 transition-all rounded-lg text-yellow-500">EN</button>
-    
-    <img id="profile-pic" src="profile.jpg" alt="Profile Picture" class="w-48 h-48 rounded-full mx-auto mb-4">
-    
-    <h1 id="title" class="text-5xl font-bold mb-4">محمد مهدی دهقانی</h1>
-    <p id="subtitle" class="text-lg text-gray-400 mb-6">مهندس هوش مصنوعی</p>
-    
-    <div class="flex justify-center space-x-4 mb-16">
-        <a href="mailto:example@example.com" target="_blank" class="icon-wrapper">
-            <img src="email.png" alt="Email">
-        </a>
-        
-        <a href="https://www.linkedin.com/in/mmd2005/" target="_blank" class="icon-wrapper">
-            <img src="linkedin.png" alt="LinkedIn">
-        </a>
-        
-        <a href="https://github.com/MMD1426" target="_blank" class="icon-wrapper">
-            <img src="github.png" alt="GitHub">
-        </a>
-        
-        <a href="https://www.kaggle.com/mmd1426" target="_blank" class="icon-wrapper">
-            <img src="kaggle.png" alt="Kaggle">
-        </a>
-    </div>
-    
-    <h2 id="about-title" class="text-3xl font-bold mb-4 opacity-0 text-right">درباره من</h2>
-    <div id="about-me" class="max-w-2xl text-gray-300 opacity-0 text-right">
-        <p class="mb-4">سلام! من محمد مهدی دهقانی هستم، یک مهندس هوش مصنوعی با علاقه‌مندی به یادگیری عمیق و پردازش تصویر. به دنبال حل چالش‌های پیچیده و توسعه مدل‌های یادگیری ماشین برای کاربردهای واقعی هستم.</p>
-    </div>
-    
-    <script>
-        gsap.from("#profile-pic", { duration: 1, scale: 0, opacity: 0, ease: "power3.out" });
-        gsap.from("#title", { duration: 1, y: -50, opacity: 0, delay: 0.3, ease: "power3.out" });
-        gsap.from("#subtitle", { duration: 1, y: 50, opacity: 0, delay: 0.6, ease: "power3.out" });
-        gsap.to("#about-title", { duration: 1, y: 0, opacity: 1, delay: 1, ease: "power3.out" });
-        gsap.to("#about-me", { duration: 1, opacity: 1, delay: 1.3, ease: "power3.out" });
-
-        const langToggle = document.getElementById("lang-toggle");
-        const title = document.getElementById("title");
-        const subtitle = document.getElementById("subtitle");
-        const aboutTitle = document.getElementById("about-title");
-        const aboutMe = document.getElementById("about-me");
-        
-        let isPersian = true;
-        
-        langToggle.addEventListener("click", () => {
-            if (isPersian) {
-                title.textContent = "Mohammad Mahdi Dehghani";
-                subtitle.textContent = "AI Engineer";
-                aboutTitle.textContent = "About Me";
-                aboutMe.innerHTML = "<p class='mb-4 text-left'>Hello! I'm Mohammad Mahdi Dehghani, an AI Engineer passionate about deep learning and computer vision. I am focused on solving complex challenges and developing machine learning models for real-world applications.</p>";
-                langToggle.textContent = "FA";
-            } else {
-                title.textContent = "محمد مهدی دهقانی";
-                subtitle.textContent = "مهندس هوش مصنوعی";
-                aboutTitle.textContent = "درباره من";
-                aboutMe.innerHTML = "<p class='mb-4 text-right'>سلام! من محمد مهدی دهقانی هستم، یک مهندس هوش مصنوعی با علاقه‌مندی به یادگیری عمیق و پردازش تصویر. به دنبال حل چالش‌های پیچیده و توسعه مدل‌های یادگیری ماشین برای کاربردهای واقعی هستم.</p>";
-                langToggle.textContent = "EN";
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>محمد مهدی دهقانی</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <style>
+            body {
+                background-color: #121212;
+                color: #fff;
+                font-family: 'Poppins', sans-serif;
             }
-            isPersian = !isPersian;
-        });
-    </script>
-</body>
+
+            .icon-wrapper {
+                border: 2px solid white;
+                border-radius: 50%;
+                padding: 8px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 50px;
+                height: 50px;
+                transition: background 0.3s ease-in-out;
+            }
+
+            .icon-wrapper img {
+                width: 24px;
+                height: 24px;
+            }
+
+            .icon-wrapper:hover {
+                background: rgba(255, 255, 255, 0.2);
+            }
+
+            #profile-pic {
+                border: 2px solid white;
+            }
+
+            .typing {
+                display: inline-block;
+                white-space: normal; /* این ویژگی را تغییر دادیم */
+                overflow: hidden;
+                border-right: 3px solid #fff;
+                padding-right: 2px;
+                animation: blink 0.75s step-end infinite;
+            }
+
+            @keyframes blink {
+                50% {
+                    border-color: transparent;
+                }
+            }
+        </style>
+    </head>
+    <body class="flex flex-col items-center justify-center text-center p-6 rtl">
+        <button id="lang-toggle" class="absolute top-5 right-5 px-4 py-2 bg-gray-700 hover:bg-gray-600 transition-all rounded-lg text-yellow-500">EN</button>
+
+        <img id="profile-pic" src="profile.jpg" alt="Profile Picture" class="w-48 h-48 rounded-full mx-auto mb-4">
+
+        <h1 id="title" class="text-5xl font-bold mb-4">محمد مهدی دهقانی</h1>
+        <p id="subtitle" class="text-lg text-gray-400 mb-6">مهندس هوش مصنوعی</p>
+
+        <div class="flex justify-center space-x-4 mb-16">
+            <a href="mailto:example@example.com" target="_blank" class="icon-wrapper">
+                <img src="email.png" alt="Email">
+            </a>
+
+            <a href="https://www.linkedin.com/in/mmd2005/" target="_blank" class="icon-wrapper">
+                <img src="linkedin.png" alt="LinkedIn">
+            </a>
+
+            <a href="https://github.com/MMD1426" target="_blank" class="icon-wrapper">
+                <img src="github.png" alt="GitHub">
+            </a>
+
+            <a href="https://www.kaggle.com/mmd1426" target="_blank" class="icon-wrapper">
+                <img src="kaggle.png" alt="Kaggle">
+            </a>
+        </div>
+
+        <h2 id="about-title" class="text-3xl font-bold mb-4 opacity-0 text-right">درباره من</h2>
+        <div id="about-me" class="max-w-2xl text-gray-300 opacity-0 text-right">
+            <!-- متن درباره من به صورت تایپی -->
+            <p class="typing" id="about-text"></p>
+        </div>
+
+        <script>
+            gsap.from("#profile-pic", { duration: 1, scale: 0, opacity: 0, ease: "power3.out" });
+            gsap.from("#title", { duration: 1, y: -50, opacity: 0, delay: 0.3, ease: "power3.out" });
+            gsap.from("#subtitle", { duration: 1, y: 50, opacity: 0, delay: 0.6, ease: "power3.out" });
+            gsap.to("#about-title", { duration: 1, y: 0, opacity: 1, delay: 1, ease: "power3.out" });
+            gsap.to("#about-me", { duration: 1, opacity: 1, delay: 1.3, ease: "power3.out" });
+
+            const langToggle = document.getElementById("lang-toggle");
+            const title = document.getElementById("title");
+            const subtitle = document.getElementById("subtitle");
+            const aboutTitle = document.getElementById("about-title");
+            const aboutMe = document.getElementById("about-me");
+            const aboutText = document.getElementById("about-text");
+
+            let isPersian = true;
+
+            // تابع برای انیمیشن تایپ
+            function typeText(text, element, delay = 0) {
+                let index = 0;
+                const speed = 100; // سرعت تایپ
+                const typingInterval = setInterval(function() {
+                    element.innerHTML += text.charAt(index);
+                    index++;
+                    if (index === text.length) {
+                        clearInterval(typingInterval);
+                    }
+                }, speed);
+            }
+
+            // شروع تایپ متن "درباره من"
+            const aboutMeText = "سلام! من محمد مهدی دهقانی هستم، یک مهندس هوش مصنوعی با علاقه‌مندی به یادگیری عمیق و پردازش تصویر. به دنبال حل چالش‌های پیچیده و توسعه مدل‌های یادگیری ماشین برای کاربردهای واقعی هستم.";
+            setTimeout(() => typeText(aboutMeText, aboutText), 1500); // اضافه کردن تاخیر کوچک
+
+            langToggle.addEventListener("click", () => {
+                if (isPersian) {
+                    title.textContent = "Mohammad Mahdi Dehghani";
+                    subtitle.textContent = "AI Engineer";
+                    aboutTitle.textContent = "About Me";
+                    aboutText.textContent = "";
+                    setTimeout(() => typeText("Hello! I'm Mohammad Mahdi Dehghani, an AI Engineer passionate about deep learning and computer vision. I am focused on solving complex challenges and developing machine learning models for real-world applications.", aboutText), 1500);
+                    langToggle.textContent = "FA";
+                } else {
+                    title.textContent = "محمد مهدی دهقانی";
+                    subtitle.textContent = "مهندس هوش مصنوعی";
+                    aboutTitle.textContent = "درباره من";
+                    aboutText.textContent = "";
+                    setTimeout(() => typeText("سلام! من محمد مهدی دهقانی هستم، یک مهندس هوش مصنوعی با علاقه‌مندی به یادگیری عمیق و پردازش تصویر. به دنبال حل چالش‌های پیچیده و توسعه مدل‌های یادگیری ماشین برای کاربردهای واقعی هستم.", aboutText), 1500);
+                    langToggle.textContent = "EN";
+                }
+                isPersian = !isPersian;
+            });
+        </script>
+    </body>
 </html>
