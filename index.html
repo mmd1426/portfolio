@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         body {
-            background-color: #121212;
+            background-color: #232323;
             color: #fff;
             font-family: 'Poppins', sans-serif;
         }
@@ -165,7 +165,27 @@
             margin: 20px auto;
             border-radius: 2px;
         }
+
+       .project-card {
+            opacity: 0; /* کارت‌ها به صورت پیش‌فرض مخفی هستند */
+            transform: translateY(50px); /* کارت‌ها از پایین حرکت می‌کنند */
+        }
+
+
+        .project-title {
+            opacity: 0; /* عنوان‌ها به صورت پیش‌فرض مخفی هستند */
+            transform: translateY(50px); /* حرکت از پایین */
+        }
+
+        .project-link {
+            opacity: 0; /* لینک‌ها به صورت پیش‌فرض مخفی هستند */
+        }
+
+
     </style>
+
+
+
 </head>
 <body class="flex flex-col items-center justify-center text-center p-6 rtl">
     <button id="lang-toggle" class="absolute top-5 right-5 px-4 py-2 bg-gray-700 hover:bg-gray-600 transition-all rounded-lg text-yellow-500">EN</button>
@@ -190,18 +210,18 @@
         </a>
     </div>
 
+    <h2 id="about-title" class="text-3xl font-bold mb-4 opacity-0 text-center">درباره من</h2>
     <div class="separator opacity-0"></div>
-    <h2 id="about-title" class="text-3xl font-bold mb-4 opacity-0 text-right">درباره من</h2>
     <div id="about-me" class="max-w-2xl text-gray-300 opacity-0 text-right">
         <p class="mb-4">سلام! من محمد مهدی دهقانی هستم، یک مهندس هوش مصنوعی با علاقه‌مندی به یادگیری عمیق و پردازش تصویر. به دنبال حل چالش‌های پیچیده و توسعه مدل‌های یادگیری ماشین برای کاربردهای واقعی هستم.</p>
     </div>
 
     <!-- مهارت‌ها -->
     <div id="skills-bar" class="w-full mt-20">
-        <div class="separator opacity-0"></div>
-        <div class="text-right mb-6">
+        <div class="text-center mb-6">
             <h2 id='skills' class="text-3xl font-bold">مهارت‌ها</h2>
         </div>
+        <div class="separator opacity-0"></div>
 
         <!-- ردیف اول: ۳ مهارت -->
         <div id='skills-1' class="flex justify-center gap-8 mb-8">
@@ -265,38 +285,160 @@
         </div>
     </div>
 
+
+<!-- /////////////////////////////////////////////// -->
+
+    <!-- بخش پروژه‌ها -->
+    <div id="projects" class="w-full mt-20">
+        <div class="text-center mb-6">
+            <h2 id='projects-title' class="text-3xl font-bold opacity-0 translate-y-10">پروژه‌ها</h2>
+        </div>
+        <div class="separator opacity-0"></div>
+
+        <div class="flex flex-wrap justify-center gap-6">
+            <!-- کارت پروژه‌ها -->
+            <div id="project1" class="project-card relative flex flex-col items-center text-center bg-[#1A1A1A] p-6 rounded-2xl shadow-lg w-80 h-60 border border-[#333] 
+                transition-transform duration-300 hover:scale-105 opacity-0 translate-y-10">
+                <img src="https://simpleicons.org/icons/opencv.svg" alt="OpenCV" class="w-14 h-14">
+                <h3 class="project-title text-xl font-semibold mt-3">Face Mask Detection</h3>
+                <p class="text-gray-400 text-sm mt-2 flex-grow">مدل یادگیری عمیق برای تشخیص ماسک صورت</p>
+                <a href="https://github.com/MMD1426/Face-Mask-Detection" target="_blank" class="project-link absolute bottom-4 text-blue-400 hover:underline opacity-0">
+                    مشاهده در گیت‌هاب
+                </a>
+            </div>
+
+            <div id="project2" class="project-card relative flex flex-col items-center text-center bg-[#1A1A1A] p-6 rounded-2xl shadow-lg w-80 h-60 border border-[#333] 
+                transition-transform duration-300 hover:scale-105 opacity-0 translate-y-10">
+                <img src="https://simpleicons.org/icons/python.svg" alt="Python" class="w-14 h-14">
+                <h3 class="project-title text-xl font-semibold mt-3">Face Recognition</h3>
+                <p class="text-gray-400 text-sm mt-2 flex-grow">تشخیص و شناسایی چهره با OpenCV</p>
+                <a href="https://github.com/MMD1426/Face-Recognition" target="_blank" class="project-link absolute bottom-4 text-blue-400 hover:underline opacity-0">
+                    مشاهده در گیت‌هاب
+                </a>
+            </div>
+
+            <div id="project3" class="project-card relative flex flex-col items-center text-center bg-[#1A1A1A] p-6 rounded-2xl shadow-lg w-80 h-60 border border-[#333] 
+                transition-transform duration-300 hover:scale-105 opacity-0 translate-y-10">
+                <img src="https://simpleicons.org/icons/tensorflow.svg" alt="TensorFlow" class="w-14 h-14">
+                <h3 class="project-title text-xl font-semibold mt-3">Emotions Detection CNN</h3>
+                <p class="text-gray-400 text-sm mt-2 flex-grow">مدل CNN برای تشخیص احساسات از چهره</p>
+                <a href="https://github.com/MMD1426/Emotions-Detection-CNN" target="_blank" class="project-link absolute bottom-4 text-blue-400 hover:underline opacity-0">
+                    مشاهده در گیت‌هاب
+                </a>
+            </div>
+
+            <div id="project4" class="project-card relative flex flex-col items-center text-center bg-[#1A1A1A] p-6 rounded-2xl shadow-lg w-80 h-60 border border-[#333] 
+                transition-transform duration-300 hover:scale-105 opacity-0 translate-y-10">
+                <img src="https://img.icons8.com/?size=100&id=QNXMW3NgF3oq&format=png&color=000000" alt="Keras" class="w-14 h-14">
+                <h3 class="project-title text-xl font-semibold mt-3">Water Meter Reader</h3>
+                <p class="text-gray-400 text-sm mt-2 flex-grow">تشخیص ارقام کنتور آب با OCR</p>
+                <a href="https://github.com/MMD1426/Water-Meter-Reader" target="_blank" class="project-link absolute bottom-4 text-blue-400 hover:underline opacity-0">
+                    مشاهده در گیت‌هاب
+                </a>
+            </div>
+
+            <div id="project5" class="project-card relative flex flex-col items-center text-center bg-[#1A1A1A] p-6 rounded-2xl shadow-lg w-80 h-60 border border-[#333] 
+                transition-transform duration-300 hover:scale-105 opacity-0 translate-y-10">
+                <img src="https://simpleicons.org/icons/yolo.svg" alt="YOLO" class="w-14 h-14">
+                <h3 class="project-title text-xl font-semibold mt-3">License Plate Iran Car YOLOv8</h3>
+                <p class="text-gray-400 text-sm mt-2 flex-grow">تشخیص پلاک خودروهای ایرانی با YOLOv8</p>
+                <a href="https://github.com/MMD1426/License-Plate-Iran-Car-Yolov8" target="_blank" class="project-link absolute bottom-4 text-blue-400 hover:underline opacity-0">
+                    مشاهده در گیت‌هاب
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+<!-- /////////////////////////////////////////////// -->
+
+
+
     <script>
+        // انیمیشن‌های قبلی
         gsap.from("#profile-pic", { duration: 1, scale: 0, opacity: 0, ease: "power3.out" });
         gsap.from("#title", { duration: 1, y: -50, opacity: 0, delay: 0.3, ease: "power3.out" });
         gsap.from("#subtitle", { duration: 1, y: 50, opacity: 0, delay: 0.6, ease: "power3.out" });
         gsap.to(".separator", { duration: 1, opacity: 1, delay: 1, ease: "power3.out" });
         gsap.to("#about-title", { duration: 1, y: 0, opacity: 1, delay: 1.2, ease: "power3.out" });
         gsap.to("#about-me", { duration: 1, opacity: 1, delay: 1.5, ease: "power3.out" });
-        
+
         gsap.from("#skills", { 
             duration: 1, 
-            y: 50, // حرکت از پایین به بالا
+            y: 50, 
             opacity: 0, 
-            delay: 1.8, // تاخیر بیشتر برای نمایش بعد از بخش‌های قبلی
+            delay: 1.8, 
             ease: "power3.out" 
         });
 
         gsap.from(".circle-skill", {
             duration: 1,
-            scale: 0, // شروع از اندازه صفر
+            scale: 0, 
             opacity: 0,
-            stagger: 0.2, // تاخیر بین انیمیشن هر دایره
-            delay: 2.0, // تاخیر کلی برای شروع انیمیشن دایره‌ها
-            ease: "back.out(1.7)" // افکت ارتجاعی
+            stagger: 0.2, 
+            delay: 2.0, 
+            ease: "back.out(1.7)" 
+        });
+
+        function calculateOffset(percent) {
+            const circumference = 314;
+            return circumference * (1 - percent / 100);
+        }
+
+        gsap.to("#keras-circle", { duration: 2, strokeDashoffset: calculateOffset(65), delay: 0.3 });
+        gsap.to("#python-circle", { duration: 2, strokeDashoffset: calculateOffset(75), delay: 0.6 });
+        gsap.to("#tensorflow-circle", { duration: 2, strokeDashoffset: calculateOffset(50), delay: 0.9 });
+        gsap.to("#opencv-circle", { duration: 2, strokeDashoffset: calculateOffset(65), delay: 1.2 });
+        gsap.to("#yolo-circle", { duration: 2, strokeDashoffset: calculateOffset(70), delay: 1.5 });
+
+        // انیمیشن‌های بخش پروژه‌ها (با تاخیر بیشتر)
+        gsap.to("#projects-title", {
+            duration: 1, // مدت زمان انیمیشن
+            opacity: 1, // تغییر opacity از ۰ به ۱
+            y: 0, // حرکت از پایین به بالا
+            delay: 2, // تاخیر برای شروع انیمیشن (بعد از انیمیشن‌های قبلی)
+            ease: "power3.out" // افکت نرم و روان
+        });
+
+        gsap.to(".separator", {
+            duration: 1,
+            opacity: 1,
+            delay: 2.8, // تاخیر بیشتر
+            ease: "power3.out"
+        });
+
+        gsap.to(".project-card", {
+            duration: 1,
+            opacity: 1,
+            y: 0,
+            stagger: 0.2,
+            delay: 3, // تاخیر بیشتر
+            ease: "power3.out"
+        });
+
+        
+        gsap.to(".project-title", {
+            duration: 1,
+            opacity: 1,
+            y: 0,
+            stagger: 0.2,
+            delay: 3.5, // تاخیر بیشتر
+            ease: "power3.out"
+        });
+
+        gsap.to(".project-link", {
+            duration: 1,
+            opacity: 1,
+            stagger: 0.2,
+            delay: 4, // تاخیر بیشتر
+            ease: "power3.out"
         });
 
 
-        // انیمیشن نوارهای پیشرفت
-        gsap.to("#keras-circle", { duration: 2, strokeDashoffset: 110, delay: 0.3 });
-        gsap.to("#python-circle", { duration: 2, strokeDashoffset: 150, delay: 0.6 });
-        gsap.to("#tensorflow-circle", { duration: 2, strokeDashoffset: 180, delay: 0.9 });
-        gsap.to("#opencv-circle", { duration: 2, strokeDashoffset: 200, delay: 1.2 });
-        gsap.to("#yolo-circle", { duration: 2, strokeDashoffset: 220, delay: 1.5 });
 
         const langToggle = document.getElementById("lang-toggle");
         const title = document.getElementById("title");
@@ -305,12 +447,14 @@
         const aboutMe = document.getElementById("about-me");
         const skills = document.getElementById("skills");
 
+
+
         let isPersian = true;
 
         langToggle.addEventListener("click", () => {
             if (isPersian) {
                 title.textContent = "Mohammad Mahdi Dehghani";
-                subtitle.textContent = "AI Engineer";
+                subtitle.textContent = "Artificial Intelligence Engineer";
                 aboutTitle.textContent = "About Me";
                 aboutMe.innerHTML = "<p class='mb-4 text-left'>Hello! I'm Mohammad Mahdi Dehghani, an AI Engineer passionate about deep learning and computer vision. I am focused on solving complex challenges and developing machine learning models for real-world applications.</p>";
                 skills.textContent = "Skills";
