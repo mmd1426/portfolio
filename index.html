@@ -181,6 +181,22 @@
             opacity: 0; /* لینک‌ها به صورت پیش‌فرض مخفی هستند */
         }
 
+        /* استایل مخصوص قاب عکس‌ها */
+        .border-gold {
+            border-color: #FFD700 !important; /* رنگ طلایی برای حاشیه */
+        }
+
+        /* انیمیشن hover برای عکس */
+        .achievement-card:hover img {
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* تضمین اندازه و موقعیت عکس */
+        .achievement-card img {
+            transition: transform 0.3s ease-in-out;
+        }
+
 
     </style>
 
@@ -329,7 +345,7 @@
 
             <div id="project4" class="project-card relative flex flex-col items-center text-center bg-[#1A1A1A] p-6 rounded-2xl shadow-lg w-80 h-60 border border-[#333] 
                 transition-transform duration-300 hover:scale-105 opacity-0 translate-y-10">
-                <img src="https://img.icons8.com/?size=100&id=QNXMW3NgF3oq&format=png&color=000000" alt="Keras" class="w-14 h-14">
+                <img src="https://simpleicons.org/icons/keras.svg" alt="Keras" class="w-14 h-14">
                 <h3 class="project-title text-xl font-semibold mt-3">Water Meter Reader</h3>
                 <p class="text-gray-400 text-sm mt-2 flex-grow">تشخیص ارقام کنتور آب با OCR</p>
                 <a href="https://github.com/MMD1426/Water-Meter-Reader" target="_blank" class="project-link absolute bottom-4 text-blue-400 hover:underline opacity-0">
@@ -352,6 +368,56 @@
 
 
 
+
+
+<!-- /////////////////////////////////////////////// -->
+
+
+<!-- بخش دستاوردها -->
+    <div id="achievements" class="w-full mt-20">
+        <div class="text-center mb-6">
+            <h2 id='achievements-title' class="text-3xl font-bold opacity-0 translate-y-10">دستاوردها</h2>
+        </div>
+        <div class="separator opacity-0"></div>
+
+        <div class="flex flex-wrap justify-center gap-6">
+            <!-- کارت دستاورد ۱: مقام در مسابقه ایده‌آرا -->
+            <div id="achievement1" class="achievement-card relative flex flex-col items-center text-center bg-[#1A1A1A] p-6 rounded-2xl shadow-lg w-80 h-96 border border-[#333] 
+                transition-transform duration-300 hover:scale-105 opacity-0 translate-y-10">
+                <!-- قاب عکس لوح تقدیر -->
+                <div class="w-48 h-48 rounded-lg overflow-hidden border-2 border-gold mb-4">
+                    <img 
+                        src="IdeaAra.jpg"
+                        alt="لوح تقدیر ایده‌آرا" 
+                        class="w-full h-full object-cover"
+                    >
+                </div>
+                <h3 class="achievement-title text-xl font-semibold mt-3">مقام دوم مسابقه ایده‌آرا</h3>
+                <p class="text-gray-400 text-sm mt-2 flex-grow">دانشگاه آزاد تهران جنوب - ۱۴۰۲</p>
+                <a href="IdeaAra.jpg" target="_blank" class="achievement-link text-blue-400 hover:underline opacity-0">
+                    مشاهده کامل لوح
+                </a>
+            </div>
+
+            <!-- کارت دستاورد ۲: عضویت در انجمن ملی هوش -->
+            <div id="achievement2" class="achievement-card relative flex flex-col items-center text-center bg-[#1A1A1A] p-6 rounded-2xl shadow-lg w-80 h-96 border border-[#333] 
+                transition-transform duration-300 hover:scale-105 opacity-0 translate-y-10">
+                <!-- قاب عکس گواهی عضویت -->
+                <div class="w-48 h-48 rounded-lg overflow-hidden border-2 border-blue-400 mb-4">
+                    <img 
+                        src="path/to/certificate2.jpg" <!-- آدرس عکس خود را وارد کنید -->
+                        alt="گواهی انجمن ملی هوش" 
+                        class="w-full h-full object-cover"
+                    >
+                </div>
+                <h3 class="achievement-title text-xl font-semibold mt-3">عضو انجمن ملی هوش ایران</h3>
+                <p class="text-gray-400 text-sm mt-2 flex-grow">از ۱۴۰۱ تاکنون</p>
+                <a href="path/to/certificate2.jpg" target="_blank" class="achievement-link text-blue-400 hover:underline opacity-0">
+                    مشاهده گواهی
+                </a>
+            </div>
+        </div>
+    </div>
 
 
 <!-- /////////////////////////////////////////////// -->
@@ -435,6 +501,68 @@
             opacity: 1,
             stagger: 0.2,
             delay: 4, // تاخیر بیشتر
+            ease: "power3.out"
+        });
+
+        // انیمیشن‌های بخش دستاوردها
+        gsap.to("#achievements-title", {
+            duration: 1,
+            opacity: 1,
+            y: 0,
+            delay: 4.5, // تاخیر بعد از انیمیشن‌های قبلی
+            ease: "power3.out"
+        });
+
+        gsap.to(".separator", {
+            duration: 1,
+            opacity: 1,
+            delay: 5, // تاخیر بیشتر
+            ease: "power3.out"
+        });
+
+        // انیمیشن برای عنوان دستاوردها
+        gsap.to("#achievements-title", {
+            duration: 1,
+            opacity: 1,
+            y: 0,
+            delay: 4.5,
+            ease: "power3.out"
+        });
+
+        // انیمیشن برای جداکننده
+        gsap.to("#achievements .separator", {
+            duration: 1,
+            opacity: 1,
+            delay: 5,
+            ease: "power3.out"
+        });
+
+        // انیمیشن برای کارت‌ها
+        gsap.to(".achievement-card", {
+            duration: 1,
+            opacity: 1,
+            y: 0,
+            stagger: 0.3,
+            delay: 5.5,
+            ease: "power3.out"
+        });
+
+        // انیمیشن برای عنوان‌های داخل کارت
+        gsap.to(".achievement-title", {
+            duration: 1,
+            opacity: 1,
+            y: 0,
+            stagger: 0.2,
+            delay: 6,
+            ease: "power3.out"
+        });
+
+        // انیمیشن برای لینک‌ها
+        gsap.to(".achievement-link", {
+            duration: 1,
+            opacity: 1,
+            stagger: 0.2,
+            delay: 6.5,
             ease: "power3.out"
         });
 
