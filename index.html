@@ -65,7 +65,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            transform: rotate(-90deg); /* شروع از بالا */
+            transform: rotate(-90deg);
         }
 
         .circle-skill circle {
@@ -78,9 +78,9 @@
         }
 
         .circle-skill .progress-circle {
-            stroke: #28a745; /* رنگ پیشرفت */
-            stroke-dasharray: 314; /* محیط دایره (2 * π * r) */
-            stroke-dashoffset: 314; /* شروع از صفر */
+            stroke: #28a745;
+            stroke-dasharray: 314;
+            stroke-dashoffset: 314;
             transition: stroke-dashoffset 2s ease;
         }
 
@@ -94,7 +94,6 @@
             z-index: 1;
         }
 
-        /* تنظیم رنگ مخصوص برای هر لوگو */
         .circle-skill.keras img {
             filter: brightness(0) saturate(100%) invert(16%) sepia(92%) saturate(5000%) hue-rotate(356deg) brightness(92%) contrast(104%);
         }
@@ -116,23 +115,23 @@
         }
 
         .circle-skill.keras .progress-circle {
-            stroke: #D00000; /* رنگ قرمز Keras */
+            stroke: #D00000;
         }
 
         .circle-skill.python .progress-circle {
-            stroke: #3776AB; /* رنگ آبی Python */
+            stroke: #3776AB;
         }
 
         .circle-skill.tensorflow .progress-circle {
-            stroke: #FF6F00; /* رنگ نارنجی TensorFlow */
+            stroke: #FF6F00;
         }
 
         .circle-skill.opencv .progress-circle {
-            stroke: #5C3EE8; /* رنگ آبی OpenCV */
+            stroke: #5C3EE8;
         }
 
         .circle-skill.yolo .progress-circle {
-            stroke: #111F68; /* رنگ زرد YOLO */
+            stroke: #111F68;
         }
 
 
@@ -142,7 +141,7 @@
         }
 
         .gap-8 {
-            gap: 2rem; /* فاصله بین مهارت‌ها */
+            gap: 2rem;
         }
 
         .justify-center {
@@ -170,50 +169,46 @@
         }
 
         .project-card {
-            opacity: 0; /* کارت‌ها به صورت پیش‌فرض مخفی هستند */
-            transform: translateY(50px); /* کارت‌ها از پایین حرکت می‌کنند */
-            transition: all 0.3s ease-in-out; /* انیمیشن نرم و روان برای همه تغییرات */
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.3s ease-in-out;
         }
 
         .project-card:hover {
-            transform: translateY(-5px) scale(1.05); /* حرکت به بالا و بزرگ‌نمایی */
-            box-shadow: 0 15px 30px rgba(171, 171, 171, 0.5); /* سایه بیشتر و پررنگ‌تر */
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(171, 171, 171, 0.5);
         }
 
         .project-title {
-            opacity: 0; /* عنوان‌ها به صورت پیش‌فرض مخفی هستند */
-            transform: translateY(50px); /* حرکت از پایین */
+            opacity: 0;
+            transform: translateY(50px);
         }
 
         .project-link {
-            opacity: 0; /* لینک‌ها به صورت پیش‌فرض مخفی هستند */
+            opacity: 0;
         }
 
-        /* استایل مخصوص قاب عکس‌ها */
         .border-gold {
-            border-color: #ffffff !important; /* رنگ طلایی برای حاشیه */
+            border-color: #ffffff !important;
         }
 
-        /* انیمیشن hover برای عکس */
         .achievement-card:hover img {
             transform: scale(1.05);
             transition: transform 0.3s ease-in-out;
         }
 
-        /* تضمین اندازه و موقعیت عکس */
         .achievement-card img {
             transition: transform 0.3s ease-in-out;
         }
 
-
         .achievement-card {
-            opacity: 0; /* کارت‌ها به صورت پیش‌فرض مخفی هستند */
-            transform: translateY(50px); /* کارت‌ها از پایین حرکت می‌کنند */
-            transition: all 0.3s ease-in-out; /* انیمیشن نرم و روان برای همه تغییرات */
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.3s ease-in-out;
         }
 
         .achievement-card:hover {
-            box-shadow: 0 15px 30px rgba(171, 171, 171, 0.5); /* سایه بیشتر و پررنگ‌تر */
+            box-shadow: 0 15px 30px rgba(171, 171, 171, 0.5);
         }
 
     </style>
@@ -243,7 +238,9 @@
             <i class="fab fa-kaggle"></i>
         </a>
     </div>
-<!--/////////////////////////////////////////// -->
+
+
+    <!-- معرفی -->
     <h2 id="about-title" class="text-3xl font-bold mb-4 opacity-0 text-center">معرفی</h2>
     <div class="separator opacity-0"></div>
     <div id="about-me" class="max-w-2xl text-gray-300 opacity-0 text-right">
@@ -270,7 +267,7 @@
             </div>
         </div>
     </div>
-<!--/////////////////////////////////////////// -->
+
 
     <!-- مهارت‌ها -->
     <div id="skills-bar" class="w-full mt-20">
@@ -279,7 +276,6 @@
         </div>
         <div class="separator opacity-0"></div>
 
-        <!-- ردیف اول: ۳ مهارت -->
         <div id='skills-1' class="flex justify-center gap-8 mb-8">
             <!-- Keras -->
             <div class="text-center">
@@ -315,7 +311,7 @@
             </div>
         </div>
 
-        <!-- ردیف دوم: ۲ مهارت -->
+        
         <div id='skills-2' class="flex justify-center gap-8">
             <!-- OpenCV -->
             <div class="text-center">
@@ -342,8 +338,6 @@
     </div>
 
 
-<!-- /////////////////////////////////////////////// -->
-
     <!-- بخش پروژه‌ها -->
     <div id="projects" class="w-full mt-20">
         <div class="text-center mb-6">
@@ -352,7 +346,6 @@
         <div class="separator opacity-0"></div>
 
         <div class="flex flex-wrap justify-center gap-6">
-            <!-- کارت پروژه‌ها -->
             <div id="project1" class="project-card relative flex flex-col items-center text-center bg-[#1A1A1A] p-6 rounded-2xl shadow-lg w-80 h-60 border border-[#333] 
                 transition-transform duration-300 opacity-0 translate-y-10">
                 <img src="https://img.icons8.com/?size=100&id=hS1D4s6k28P3&format=png&color=FFFFFF" class="w-14 h-14">
@@ -406,14 +399,7 @@
     </div>
 
 
-
-
-
-
-<!-- /////////////////////////////////////////////// -->
-
-
-<!-- بخش دستاوردها -->
+    <!-- بخش دستاوردها -->
     <div id="achievements" class="w-full mt-20">
         <div class="text-center mb-6">
             <h2 id='achievements-title' class="text-3xl font-bold opacity-0 translate-y-10">دستاوردها</h2>
@@ -421,28 +407,20 @@
         <div class="separator opacity-0"></div>
 
         <div class="flex flex-wrap justify-center gap-6">
-            <!-- کارت دستاورد ۱: مقام در مسابقه ایده‌آرا -->
             <div id="achievement1" class="achievement-card relative flex flex-col items-center text-center bg-[#1A1A1A] p-6 rounded-2xl shadow-lg w-80 h-100 border border-[#333] 
                 transition-transform duration-300 hover:scale-105 opacity-0 translate-y-10">
-                <!-- قاب عکس لوح تقدیر -->
                 <div class="w-48 h-48 rounded-lg overflow-hidden border-2 border-white mb-4">
-                    <img 
-                        src="IdeaAra.jpg"
-                        alt="لوح تقدیر ایده‌آرا" 
-                        class="w-full h-full object-cover"
-                    >
+                    <img src="Ideaara.jpg" alt="لوح تقدیر ایده‌آرا" class="w-full h-full object-cover">
                 </div>
                 <h3 id='achievements-ideaara' class="achievement-title text-xl font-semibold mt-3">مقام دوم مسابقه ایده‌آرا</h3>
                 <p id='achievements-ideaara-des' class="text-gray-400 text-sm mt-2 flex-grow">دانشگاه آزاد تهران جنوب - ۱۴۰۳</p>
-                <a id='show-plaque-ideaara' href="IdeaAra.jpg" target="_blank" class="achievement-link text-blue-400 hover:underline opacity-0">
+                <a id='show-plaque-ideaara' href="Ideaara.jpg" target="_blank" class="achievement-link text-blue-400 hover:underline opacity-0">
                     مشاهده کامل لوح
                 </a>
             </div>
 
-            <!-- کارت دستاورد ۲: عضویت در انجمن ملی هوش -->
             <div id="achievement2" class="achievement-card relative flex flex-col items-center text-center bg-[#1A1A1A] p-6 rounded-2xl shadow-lg w-80 h-100 border border-[#333] 
                 transition-transform duration-300 hover:scale-105 opacity-0 translate-y-10">
-                <!-- قاب عکس گواهی عضویت -->
                 <div class="w-48 h-48 rounded-lg overflow-hidden border-2 border-white-400 mb-4">
                     <img 
                         src="iq-certificate.jpg"
@@ -460,35 +438,16 @@
     </div>
 
 
-<!-- /////////////////////////////////////////////// -->
-
-
-
     <script>
-        // انیمیشن‌های قبلی
+
         gsap.from("#profile-pic", { duration: 1, scale: 0, opacity: 0, ease: "power3.out" });
         gsap.from("#title", { duration: 1, y: -50, opacity: 0, delay: 0.3, ease: "power3.out" });
         gsap.from("#subtitle", { duration: 1, y: 50, opacity: 0, delay: 0.6, ease: "power3.out" });
         gsap.to(".separator", { duration: 1, opacity: 1, delay: 1, ease: "power3.out" });
         gsap.to("#about-title", { duration: 1, y: 0, opacity: 1, delay: 1.2, ease: "power3.out" });
         gsap.to("#about-me", { duration: 1, opacity: 1, delay: 1.5, ease: "power3.out" });
-
-        gsap.from("#skills", { 
-            duration: 1, 
-            y: 50, 
-            opacity: 0, 
-            delay: 1.8, 
-            ease: "power3.out" 
-        });
-
-        gsap.from(".circle-skill", {
-            duration: 1,
-            scale: 0, 
-            opacity: 0,
-            stagger: 0.2, 
-            delay: 2.0, 
-            ease: "back.out(1.7)" 
-        });
+        gsap.from("#skills", { duration: 1, y: 50, opacity: 0, delay: 1.8, ease: "power3.out" });
+        gsap.from(".circle-skill", {duration: 1, scale: 0, opacity: 0,stagger: 0.2, delay: 2.0, ease: "back.out(1.7)" });
 
         function calculateOffset(percent) {
             const circumference = 314;
@@ -501,110 +460,18 @@
         gsap.to("#opencv-circle", { duration: 2, strokeDashoffset: calculateOffset(65), delay: 1.2 });
         gsap.to("#yolo-circle", { duration: 2, strokeDashoffset: calculateOffset(70), delay: 1.5 });
 
-        // انیمیشن‌های بخش پروژه‌ها (با تاخیر بیشتر)
-        gsap.to("#projects-title", {
-            duration: 1, // مدت زمان انیمیشن
-            opacity: 1, // تغییر opacity از ۰ به ۱
-            y: 0, // حرکت از پایین به بالا
-            delay: 2, // تاخیر برای شروع انیمیشن (بعد از انیمیشن‌های قبلی)
-            ease: "power3.out" // افکت نرم و روان
-        });
+        gsap.to("#projects-title", { duration: 1, opacity: 1, y: 0, delay: 2, ease: "power3.out" });
+        gsap.to(".separator", { duration: 1, opacity: 1, delay: 2.8, ease: "power3.out" });
+        gsap.to(".project-card", { duration: 1, opacity: 1, y: 0, stagger: 0.2, delay: 3, ease: "power3.out" });
+        gsap.to(".project-title", { duration: 1, opacity: 1, y: 0, stagger: 0.2, delay: 3.5, ease: "power3.out" });
+        gsap.to(".project-link", { duration: 1, opacity: 1, stagger: 0.2, delay: 4, ease: "power3.out" });
 
-        gsap.to(".separator", {
-            duration: 1,
-            opacity: 1,
-            delay: 2.8, // تاخیر بیشتر
-            ease: "power3.out"
-        });
-
-        gsap.to(".project-card", {
-            duration: 1,
-            opacity: 1,
-            y: 0,
-            stagger: 0.2,
-            delay: 3, // تاخیر بیشتر
-            ease: "power3.out"
-        });
-
-        
-        gsap.to(".project-title", {
-            duration: 1,
-            opacity: 1,
-            y: 0,
-            stagger: 0.2,
-            delay: 3.5, // تاخیر بیشتر
-            ease: "power3.out"
-        });
-
-        gsap.to(".project-link", {
-            duration: 1,
-            opacity: 1,
-            stagger: 0.2,
-            delay: 4, // تاخیر بیشتر
-            ease: "power3.out"
-        });
-
-        // انیمیشن‌های بخش دستاوردها
-        gsap.to("#achievements-title", {
-            duration: 1,
-            opacity: 1,
-            y: 0,
-            delay: 4.5, // تاخیر بعد از انیمیشن‌های قبلی
-            ease: "power3.out"
-        });
-
-        gsap.to(".separator", {
-            duration: 1,
-            opacity: 1,
-            delay: 5, // تاخیر بیشتر
-            ease: "power3.out"
-        });
-
-        // انیمیشن برای عنوان دستاوردها
-        gsap.to("#achievements-title", {
-            duration: 1,
-            opacity: 1,
-            y: 0,
-            delay: 4.5,
-            ease: "power3.out"
-        });
-
-        // انیمیشن برای جداکننده
-        gsap.to("#achievements .separator", {
-            duration: 1,
-            opacity: 1,
-            delay: 5,
-            ease: "power3.out"
-        });
-
-        // انیمیشن برای کارت‌ها
-        gsap.to(".achievement-card", {
-            duration: 1,
-            opacity: 1,
-            y: 0,
-            stagger: 0.3,
-            delay: 5,
-            ease: "power3.out"
-        });
-
-        // انیمیشن برای عنوان‌های داخل کارت
-        gsap.to(".achievement-title", {
-            duration: 1,
-            opacity: 1,
-            y: 0,
-            stagger: 0.2,
-            delay: 5.5,
-            ease: "power3.out"
-        });
-
-        // انیمیشن برای لینک‌ها
-        gsap.to(".achievement-link", {
-            duration: 1,
-            opacity: 1,
-            stagger: 0.2,
-            delay: 6,
-            ease: "power3.out"
-        });
+        gsap.to("#achievements-title", { duration: 1, opacity: 1, y: 0, delay: 4.5, ease: "power3.out" });
+        gsap.to(".separator", { duration: 1, opacity: 1, delay: 5, ease: "power3.out" });
+        gsap.to("#achievements .separator", { duration: 1, opacity: 1, delay: 5, ease: "power3.out" });
+        gsap.to(".achievement-card", { duration: 1, opacity: 1, y: 0, stagger: 0.3, delay: 5, ease: "power3.out" });
+        gsap.to(".achievement-title", { duration: 1, opacity: 1, y: 0, stagger: 0.2, delay: 5.5, ease: "power3.out" });
+        gsap.to(".achievement-link", { duration: 1, opacity: 1, stagger: 0.2, delay: 6, ease: "power3.out" });
 
 
 
@@ -636,18 +503,6 @@
         const achievementsIq = document.getElementById("achievements-iq1");
         const achievementsIqDes = document.getElementById("achievements-iq1-des");
         const achievementsIqCer = document.getElementById("show-certificate-iq");
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         let isPersian = true;
@@ -713,17 +568,12 @@
                 achievementsIqCer.textContent = "مشاهده گواهی";
 
 
-
-
-
-
-
-
                 langToggle.textContent = "EN";
             }
             isPersian = !isPersian;
         });
 
     </script>
+    
 </body>
 </html>
