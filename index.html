@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         body {
-            background-color: #232323;
+            background-color: #353535;
             color: #fff;
             font-family: 'Poppins', sans-serif;
         }
@@ -36,25 +36,28 @@
         }
 
         #profile-pic {
-            border: 3px solid white;
+            border: 2px solid white;
         }
 
         .separator {
-            width: 100px;
-            height: 4px;
+            width: 130px;
+            height: 5px;
             background: white;
             border-radius: 2px;
             margin: 10px auto;
         }
 
-        /* دایره مهارت‌ها */
         .circle-skill {
             position: relative;
             width: 120px;
             height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             border-radius: 50%;
-            margin: 20px auto;
+            box-shadow: 0 4px 10px rgba(171, 171, 171, 0.5);
         }
+
 
         .circle-skill svg {
             position: absolute;
@@ -166,11 +169,16 @@
             border-radius: 2px;
         }
 
-       .project-card {
+        .project-card {
             opacity: 0; /* کارت‌ها به صورت پیش‌فرض مخفی هستند */
             transform: translateY(50px); /* کارت‌ها از پایین حرکت می‌کنند */
+            transition: all 0.3s ease-in-out; /* انیمیشن نرم و روان برای همه تغییرات */
         }
 
+        .project-card:hover {
+            transform: translateY(-5px) scale(1.05); /* حرکت به بالا و بزرگ‌نمایی */
+            box-shadow: 0 15px 30px rgba(171, 171, 171, 0.5); /* سایه بیشتر و پررنگ‌تر */
+        }
 
         .project-title {
             opacity: 0; /* عنوان‌ها به صورت پیش‌فرض مخفی هستند */
@@ -183,7 +191,7 @@
 
         /* استایل مخصوص قاب عکس‌ها */
         .border-gold {
-            border-color: #FFD700 !important; /* رنگ طلایی برای حاشیه */
+            border-color: #ffffff !important; /* رنگ طلایی برای حاشیه */
         }
 
         /* انیمیشن hover برای عکس */
@@ -198,13 +206,23 @@
         }
 
 
+        .achievement-card {
+            opacity: 0; /* کارت‌ها به صورت پیش‌فرض مخفی هستند */
+            transform: translateY(50px); /* کارت‌ها از پایین حرکت می‌کنند */
+            transition: all 0.3s ease-in-out; /* انیمیشن نرم و روان برای همه تغییرات */
+        }
+
+        .achievement-card:hover {
+            box-shadow: 0 15px 30px rgba(171, 171, 171, 0.5); /* سایه بیشتر و پررنگ‌تر */
+        }
+
     </style>
 
 
 
 </head>
 <body class="flex flex-col items-center justify-center text-center p-6 rtl">
-    <button id="lang-toggle" class="absolute top-5 right-5 px-4 py-2 bg-gray-700 hover:bg-gray-600 transition-all rounded-lg text-yellow-500">EN</button>
+    <button id="lang-toggle" class="absolute top-5 right-5 px-4 py-2 bg-gray-700 hover:bg-gray-600 transition-all rounded-lg text-white-500">EN</button>
 
     <img id="profile-pic" src="profile.jpg" alt="Profile Picture" class="w-48 h-48 rounded-full mx-auto mb-4">
 
@@ -225,12 +243,34 @@
             <i class="fab fa-kaggle"></i>
         </a>
     </div>
-
-    <h2 id="about-title" class="text-3xl font-bold mb-4 opacity-0 text-center">درباره من</h2>
+<!--/////////////////////////////////////////// -->
+    <h2 id="about-title" class="text-3xl font-bold mb-4 opacity-0 text-center">معرفی</h2>
     <div class="separator opacity-0"></div>
     <div id="about-me" class="max-w-2xl text-gray-300 opacity-0 text-right">
-        <p class="mb-4">سلام! من محمد مهدی دهقانی هستم، یک مهندس هوش مصنوعی با علاقه‌مندی به یادگیری عمیق و پردازش تصویر. به دنبال حل چالش‌های پیچیده و توسعه مدل‌های یادگیری ماشین برای کاربردهای واقعی هستم.</p>
+        <p id='presentation' class="mb-4">
+            محمد مهدی دهقانی<br>
+            متولد قم، ۲۳ فروردین ۱۳۸۴<br>
+            دانشجوی کارشناسی مهندسی کامپیوتر، دانشگاه قم<br>
+        </p>
+    
+        <div class="mb-6">
+            <h3 id='education-title' class="text-xl font-semibold text-white mb-2">:تحصیلات</h3>
+            <ul id='education' class="list-disc list-inside" dir="rtl">
+                <li>کارشناسی مهندسی کامپیوتر - دانشگاه قم (۱۴۰۲ تاکنون)</li>
+            </ul>
+        </div>
+    
+        <div class="mb-6">
+            <h3 id='technical-skills' class="text-xl font-semibold text-white mb-3">:زمینه‌های تخصصی</h3>
+            <div class="flex flex-wrap gap-2 mt-2">
+                <span class="px-3 py-1 bg-[#202020] rounded-full text-sm">Artificial Intelligence</span>
+                <span class="px-3 py-1 bg-[#202020] rounded-full text-sm">Machine Learning</span>
+                <span class="px-3 py-1 bg-[#202020] rounded-full text-sm">Deep Learning</span>
+                <span class="px-3 py-1 bg-[#202020] rounded-full text-sm">Computer Vision</span>
+            </div>
+        </div>
     </div>
+<!--/////////////////////////////////////////// -->
 
     <!-- مهارت‌ها -->
     <div id="skills-bar" class="w-full mt-20">
@@ -314,51 +354,51 @@
         <div class="flex flex-wrap justify-center gap-6">
             <!-- کارت پروژه‌ها -->
             <div id="project1" class="project-card relative flex flex-col items-center text-center bg-[#1A1A1A] p-6 rounded-2xl shadow-lg w-80 h-60 border border-[#333] 
-                transition-transform duration-300 hover:scale-105 opacity-0 translate-y-10">
+                transition-transform duration-300 opacity-0 translate-y-10">
                 <img src="https://img.icons8.com/?size=100&id=hS1D4s6k28P3&format=png&color=FFFFFF" class="w-14 h-14">
                 <h3 class="project-title text-xl font-semibold mt-3">Face Mask Detection</h3>
-                <p class="text-gray-400 text-sm mt-2 flex-grow">مدل یادگیری عمیق برای تشخیص ماسک صورت</p>
-                <a href="https://github.com/MMD1426/Face-Mask-Detection" target="_blank" class="project-link absolute bottom-4 text-blue-400 hover:underline opacity-0">
+                <p id='project-face-mask' class="text-gray-400 text-sm mt-2 flex-grow">مدل یادگیری عمیق برای تشخیص ماسک صورت</p>
+                <a id='show-github-face-mask' href="https://github.com/MMD1426/Face-Mask-Detection" target="_blank" class="project-link absolute bottom-4 text-blue-400 hover:underline opacity-0">
                     مشاهده در گیت‌هاب
                 </a>
             </div>
 
             <div id="project2" class="project-card relative flex flex-col items-center text-center bg-[#1A1A1A] p-6 rounded-2xl shadow-lg w-80 h-60 border border-[#333] 
-                transition-transform duration-300 hover:scale-105 opacity-0 translate-y-10">
-                <img src="hhttps://img.icons8.com/?size=100&id=rX1rKlExSbRB&format=png&color=FFFFFF" class="w-14 h-14">
+                transition-transform duration-300 opacity-0 translate-y-10">
+                <img src="https://img.icons8.com/?size=100&id=rX1rKlExSbRB&format=png&color=FFFFFF" class="w-14 h-14">
                 <h3 class="project-title text-xl font-semibold mt-3">Face Recognition</h3>
-                <p class="text-gray-400 text-sm mt-2 flex-grow">تشخیص و شناسایی چهره با OpenCV</p>
-                <a href="https://github.com/MMD1426/Face-Recognition" target="_blank" class="project-link absolute bottom-4 text-blue-400 hover:underline opacity-0">
+                <p id='project-face-recognition' class="text-gray-400 text-sm mt-2 flex-grow">OpenCV تشخیص و شناسایی چهره با</p>
+                <a id='show-github-face-recognition' href="https://github.com/MMD1426/Face-Recognition" target="_blank" class="project-link absolute bottom-4 text-blue-400 hover:underline opacity-0">
                     مشاهده در گیت‌هاب
                 </a>
             </div>
 
             <div id="project3" class="project-card relative flex flex-col items-center text-center bg-[#1A1A1A] p-6 rounded-2xl shadow-lg w-80 h-60 border border-[#333] 
-                transition-transform duration-300 hover:scale-105 opacity-0 translate-y-10">
+                transition-transform duration-300 opacity-0 translate-y-10">
                 <img src="https://img.icons8.com/?size=100&id=7839&format=png&color=FFFFFF" class="w-14 h-14">
                 <h3 class="project-title text-xl font-semibold mt-3">Emotions Detection CNN</h3>
-                <p class="text-gray-400 text-sm mt-2 flex-grow">مدل CNN برای تشخیص احساسات از چهره</p>
-                <a href="https://github.com/MMD1426/Emotion-Detection-CNN" target="_blank" class="project-link absolute bottom-4 text-blue-400 hover:underline opacity-0">
+                <p id='project-emotions-detection' class="text-gray-400 text-sm mt-2 flex-grow">مدل شبکه عصبی پیچشی برای تشخیص احساسات از چهره</p>
+                <a id='show-github-emotions-detection' href="https://github.com/MMD1426/Emotion-Detection-CNN" target="_blank" class="project-link absolute bottom-4 text-blue-400 hover:underline opacity-0">
                     مشاهده در گیت‌هاب
                 </a>
             </div>
 
             <div id="project4" class="project-card relative flex flex-col items-center text-center bg-[#1A1A1A] p-6 rounded-2xl shadow-lg w-80 h-60 border border-[#333] 
-                transition-transform duration-300 hover:scale-105 opacity-0 translate-y-10">
+                transition-transform duration-300 opacity-0 translate-y-10">
                 <img src="https://img.icons8.com/?size=100&id=u1xuJz3rmMFV&format=png&color=FFFFFF" class="w-14 h-14">
                 <h3 class="project-title text-xl font-semibold mt-3">Water Meter Reader</h3>
-                <p class="text-gray-400 text-sm mt-2 flex-grow">تشخیص ارقام کنتور آب با OCR</p>
-                <a href="https://github.com/MMD1426/WaterMeter-Reader" target="_blank" class="project-link absolute bottom-4 text-blue-400 hover:underline opacity-0">
+                <p id='project-water-meter' class="text-gray-400 text-sm mt-2 flex-grow">Yolov8 تشخیص ارقام کنتور آب با</p>
+                <a id='show-github-water-meter' href="https://github.com/MMD1426/WaterMeter-Reader" target="_blank" class="project-link absolute bottom-4 text-blue-400 hover:underline opacity-0">
                     مشاهده در گیت‌هاب
                 </a>
             </div>
 
             <div id="project5" class="project-card relative flex flex-col items-center text-center bg-[#1A1A1A] p-6 rounded-2xl shadow-lg w-80 h-60 border border-[#333] 
-                transition-transform duration-300 hover:scale-105 opacity-0 translate-y-10">
+                transition-transform duration-300 opacity-0 translate-y-10">
                 <img src="https://img.icons8.com/?size=100&id=24351&format=png&color=FFFFFF" class="w-14 h-14">
                 <h3 class="project-title text-xl font-semibold mt-3">License Plate Iran Car YOLOv8</h3>
-                <p class="text-gray-400 text-sm mt-2 flex-grow">تشخیص پلاک خودروهای ایرانی با YOLOv8</p>
-                <a href="https://github.com/MMD1426/License-Plate-Iran-Car-Yolov8" target="_blank" class="project-link absolute bottom-4 text-blue-400 hover:underline opacity-0">
+                <p id='project-plate-car' class="text-gray-400 text-sm mt-2 flex-grow">Yolov8 تشخیص پلاک خودروهای ایرانی با</p>
+                <a id='show-github-plate-car' href="https://github.com/MMD1426/License-Plate-Iran-Car-Yolov8" target="_blank" class="project-link absolute bottom-4 text-blue-400 hover:underline opacity-0">
                     مشاهده در گیت‌هاب
                 </a>
             </div>
@@ -382,37 +422,37 @@
 
         <div class="flex flex-wrap justify-center gap-6">
             <!-- کارت دستاورد ۱: مقام در مسابقه ایده‌آرا -->
-            <div id="achievement1" class="achievement-card relative flex flex-col items-center text-center bg-[#1A1A1A] p-6 rounded-2xl shadow-lg w-80 h-96 border border-[#333] 
+            <div id="achievement1" class="achievement-card relative flex flex-col items-center text-center bg-[#1A1A1A] p-6 rounded-2xl shadow-lg w-80 h-100 border border-[#333] 
                 transition-transform duration-300 hover:scale-105 opacity-0 translate-y-10">
                 <!-- قاب عکس لوح تقدیر -->
-                <div class="w-48 h-48 rounded-lg overflow-hidden border-2 border-gold mb-4">
+                <div class="w-48 h-48 rounded-lg overflow-hidden border-2 border-white mb-4">
                     <img 
                         src="IdeaAra.jpg"
                         alt="لوح تقدیر ایده‌آرا" 
                         class="w-full h-full object-cover"
                     >
                 </div>
-                <h3 class="achievement-title text-xl font-semibold mt-3">مقام دوم مسابقه ایده‌آرا</h3>
-                <p class="text-gray-400 text-sm mt-2 flex-grow">دانشگاه آزاد تهران جنوب - ۱۴۰۲</p>
-                <a href="IdeaAra.jpg" target="_blank" class="achievement-link text-blue-400 hover:underline opacity-0">
+                <h3 id='achievements-ideaara' class="achievement-title text-xl font-semibold mt-3">مقام دوم مسابقه ایده‌آرا</h3>
+                <p id='achievements-ideaara-des' class="text-gray-400 text-sm mt-2 flex-grow">دانشگاه آزاد تهران جنوب - ۱۴۰۳</p>
+                <a id='show-plaque-ideaara' href="IdeaAra.jpg" target="_blank" class="achievement-link text-blue-400 hover:underline opacity-0">
                     مشاهده کامل لوح
                 </a>
             </div>
 
             <!-- کارت دستاورد ۲: عضویت در انجمن ملی هوش -->
-            <div id="achievement2" class="achievement-card relative flex flex-col items-center text-center bg-[#1A1A1A] p-6 rounded-2xl shadow-lg w-80 h-96 border border-[#333] 
+            <div id="achievement2" class="achievement-card relative flex flex-col items-center text-center bg-[#1A1A1A] p-6 rounded-2xl shadow-lg w-80 h-100 border border-[#333] 
                 transition-transform duration-300 hover:scale-105 opacity-0 translate-y-10">
                 <!-- قاب عکس گواهی عضویت -->
-                <div class="w-48 h-48 rounded-lg overflow-hidden border-2 border-blue-400 mb-4">
+                <div class="w-48 h-48 rounded-lg overflow-hidden border-2 border-white-400 mb-4">
                     <img 
-                        src="path/to/certificate2.jpg" <!-- آدرس عکس خود را وارد کنید -->
-                        alt="گواهی انجمن ملی هوش" 
+                        src="iq-certificate.jpg"
+                        alt="گواهی انجمن ملی هوش ایران" 
                         class="w-full h-full object-cover"
                     >
                 </div>
-                <h3 class="achievement-title text-xl font-semibold mt-3">عضو انجمن ملی هوش ایران</h3>
-                <p class="text-gray-400 text-sm mt-2 flex-grow">از ۱۴۰۱ تاکنون</p>
-                <a href="path/to/certificate2.jpg" target="_blank" class="achievement-link text-blue-400 hover:underline opacity-0">
+                <h3 id='achievements-iq1' class="achievement-title text-xl font-semibold mt-3">عضو انجمن ملی هوش ایران</h3>
+                <p id='achievements-iq1-des' class="text-gray-400 text-sm mt-2 flex-grow">از ۱۴۰۳ تاکنون</p>
+                <a id='show-certificate-iq' href="iq-certificate.jpg" target="_blank" class="achievement-link text-blue-400 hover:underline opacity-0">
                     مشاهده گواهی
                 </a>
             </div>
@@ -543,7 +583,7 @@
             opacity: 1,
             y: 0,
             stagger: 0.3,
-            delay: 5.5,
+            delay: 5,
             ease: "power3.out"
         });
 
@@ -553,7 +593,7 @@
             opacity: 1,
             y: 0,
             stagger: 0.2,
-            delay: 6,
+            delay: 5.5,
             ease: "power3.out"
         });
 
@@ -562,7 +602,7 @@
             duration: 1,
             opacity: 1,
             stagger: 0.2,
-            delay: 6.5,
+            delay: 6,
             ease: "power3.out"
         });
 
@@ -573,7 +613,40 @@
         const subtitle = document.getElementById("subtitle");
         const aboutTitle = document.getElementById("about-title");
         const aboutMe = document.getElementById("about-me");
+        const presentation = document.getElementById("presentation");
+        const educationTitle = document.getElementById("education-title");
+        const education = document.getElementById("education");
+        const technicalSkills = document.getElementById("technical-skills");
         const skills = document.getElementById("skills");
+        const projectsTitle = document.getElementById("projects-title");
+        const projectsFaceMask = document.getElementById("project-face-mask");
+        const showGithubFaceMask = document.getElementById("show-github-face-mask");
+        const projectsFaceRecognition = document.getElementById("project-face-recognition");
+        const showGithubFaceRecognition = document.getElementById("show-github-face-recognition");
+        const projectsEmotionDetection = document.getElementById("project-emotions-detection");
+        const showGithubEmotionsDetection = document.getElementById("show-github-emotions-detection");
+        const projectsWaterMeter = document.getElementById("project-water-meter");
+        const showGithubWaterMeter = document.getElementById("show-github-water-meter");
+        const projectsPlateCar = document.getElementById("project-plate-car");
+        const showGithubPlateCar = document.getElementById("show-github-plate-car");
+        const achievementsTitle = document.getElementById("achievements-title");
+        const achievementsIdeaAra = document.getElementById("achievements-ideaara");
+        const achievementsIdeaAraDes = document.getElementById("achievements-ideaara-des");
+        const achievementsIdeaAraPlaque = document.getElementById("show-plaque-ideaara");
+        const achievementsIq = document.getElementById("achievements-iq1");
+        const achievementsIqDes = document.getElementById("achievements-iq1-des");
+        const achievementsIqCer = document.getElementById("show-certificate-iq");
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -583,20 +656,74 @@
             if (isPersian) {
                 title.textContent = "Mohammad Mahdi Dehghani";
                 subtitle.textContent = "Artificial Intelligence Engineer";
-                aboutTitle.textContent = "About Me";
-                aboutMe.innerHTML = "<p class='mb-4 text-left'>Hello! I'm Mohammad Mahdi Dehghani, an AI Engineer passionate about deep learning and computer vision. I am focused on solving complex challenges and developing machine learning models for real-world applications.</p>";
+                aboutTitle.textContent = "Presentation";
+                presentation.innerHTML = "<p class='mb-4 text-left'>Mohammad Mahdi Dehghani<br>Born in Qom, April 12, 2005<br>Computer Engineering Student, University of Qom<br></p>";
+                educationTitle.innerHTML = "<h3 class='text-xl font-semibold text-white mb-2 text-left'>Education:</h3>";
+                education.innerHTML = "<ul class='list-disc list-inside text-left' dir='ltr'> <li>Bachelor's in Computer Engineering - University of Qom (2023 - Present)</li></ul>";
+                technicalSkills.innerHTML = "<h3 class='text-left text-xl font-semibold text-white mb-2'>Technical Skills:</h3>";
                 skills.textContent = "Skills";
+                projectsTitle.textContent = "Projects";
+                projectsFaceMask.textContent = "Deep Learning Model for Face Mask Detection";
+                showGithubFaceMask.textContent = "View it on GitHub";
+                projectsFaceRecognition.textContent = "Face Detection and Recognition with OpenCV";
+                showGithubFaceRecognition.textContent = "View it on GitHub";
+                projectsEmotionDetection.textContent = "CNN Model for Facial Emotion Recognition";
+                showGithubEmotionsDetection.textContent = "View it on GitHub";
+                projectsWaterMeter.textContent = "Water Meter Digit Recognition with YOLOv8";
+                showGithubWaterMeter.textContent = "View it on GitHub";
+                projectsPlateCar.textContent = "Iranian License Plate Recognition with YOLOv8";
+                showGithubPlateCar.textContent = "View it on GitHub";
+                achievementsTitle.textContent = "Achievements";
+                achievementsIdeaAra.textContent = "Second place in the Idea-Ara competition";
+                achievementsIdeaAraDes.textContent = "Azad University of Tehran South - 2024";
+                achievementsIdeaAraPlaque.textContent = "View full plaque";
+                achievementsIq.textContent = "Member of the National Intelligence Association of Iran";
+                achievementsIqDes.textContent = "Since 2025";
+                achievementsIqCer.textContent = "View certificate";
+
+
+
                 langToggle.textContent = "FA";
             } else {
                 title.textContent = "محمد مهدی دهقانی";
                 subtitle.textContent = "مهندس هوش مصنوعی";
-                aboutTitle.textContent = "درباره من";
-                aboutMe.innerHTML = "<p class='mb-4 text-right'>سلام! من محمد مهدی دهقانی هستم، یک مهندس هوش مصنوعی با علاقه‌مندی به یادگیری عمیق و پردازش تصویر. به دنبال حل چالش‌های پیچیده و توسعه مدل‌های یادگیری ماشین برای کاربردهای واقعی هستم.</p>";
+                aboutTitle.textContent = "معرفی";
+                presentation.innerHTML = "<p class='mb-4 text-right'>محمد مهدی دهقانی<br>متولد قم، ۲۳ فروردین ۱۳۸۴<br>دانشجوی کارشناسی مهندسی کامپیوتر، دانشگاه قم<br></p>";
+                educationTitle.innerHTML = "<h3 class='text-xl font-semibold text-white mb-2 text-right'>:تحصیلات</h3>";
+                education.innerHTML = "<ul class='list-disc list-inside text-right' dir='rtl'> <li>کارشناسی مهندسی کامپیوتر - دانشگاه قم (۱۴۰۲ تاکنون)</li></ul>";
+                technicalSkills.innerHTML = "<h3 class='text-right text-xl font-semibold text-white mb-2'>:مهارت های تخصصی</h3>";
                 skills.textContent = "مهارت ها";
+                projectsTitle.textContent = "پروژه ها";
+                projectsFaceMask.textContent = "مدل یادگیری عمیق برای تشخیص ماسک صورت";
+                showGithubFaceMask.textContent = "مشاهده در گیت‌هاب";
+                projectsFaceRecognition.textContent = "OpenCV تشخیص و شناسایی چهره با";
+                showGithubFaceRecognition.textContent = "مشاهده در گیت‌هاب";
+                projectsEmotionDetection.textContent = "مدل شبکه عصبی پیچشی برای تشخیص احساسات از چهره";
+                showGithubEmotionsDetection.textContent = "مشاهده در گیت‌هاب";
+                projectsWaterMeter.textContent = "Yolov8 تشخیص ارقام کنتور آب با";
+                showGithubWaterMeter.textContent = "مشاهده در گیت‌هاب";
+                projectsPlateCar.textContent = "Yolov8 تشخیص پلاک خودروهای ایرانی با";
+                showGithubPlateCar.textContent = "مشاهده در گیت‌هاب";
+                achievementsTitle.textContent = "دستاوردها";
+                achievementsIdeaAra.textContent = "مقام دوم مسابقه ایده‌آرا";
+                achievementsIdeaAraDes.textContent = "دانشگاه آزاد تهران جنوب - ۱۴۰۳";
+                achievementsIdeaAraPlaque.textContent = "مشاهده کامل لوح";
+                achievementsIq.textContent = "عضو انجمن ملی هوش ایران";
+                achievementsIqDes.textContent = "از ۱۴۰۳ تاکنون";
+                achievementsIqCer.textContent = "مشاهده گواهی";
+
+
+
+
+
+
+
+
                 langToggle.textContent = "EN";
             }
             isPersian = !isPersian;
         });
+
     </script>
 </body>
 </html>
